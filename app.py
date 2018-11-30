@@ -23,7 +23,7 @@ def hello_world():
         db = ExeMysql()
         db.insert(exl_data)
         return render_template('line-stack.html', form=form)
-
+        ss
 
 if __name__ == '__main__':
     app.run()
