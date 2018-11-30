@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <link href="/static/css01.css" type="text/css" rel="stylesheet">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="/static/echarts.js"></script>
+       <script type="text/javascript" src="/static/js01.js"></script>
+       <hr style="height:3px;border:none;border-top:3px double red;" />
+       <table style="width:100%;border-width:6px;" border="3">
+            <tr>
+                <th align="left">
+                    <form method="post">
+                        {{ form.remember }}{{ form.remember.label }}<br>
+                        {{ form.remember0 }}{{ form.remember0.label }}<br>
+                        {{ form.remember1 }}{{ form.remember1.label }}<br>
+                        {{ form.remember2 }}{{ form.remember2.label }}<br>
+                        {{ form.remember3 }}{{ form.remember3.label }}<br>
+                        {{ form.remember4 }}{{ form.remember4.label }}<br>
+                        {{ form.remember5 }}{{ form.remember5.label }}<br>
+                        {{ form.remember6 }}{{ form.remember6.label }}<br>
+                        {{ form.remember7 }}{{ form.remember7.label }}<br>
+                        {{ form.remember8 }}{{ form.remember8.label }}<br>
+                        {{ form.remember9 }}{{ form.remember9.label }}<br>
+                        {{ form.remember10 }}{{ form.remember10.label }}<br>
+                        {{ form.remember11 }}{{ form.remember11.label }}<br>
+                        {{ form.remember12 }}{{ form.remember12.label }}<br>
+                        {{ form.remember13 }}{{ form.remember13.label }}<br>
+                        {{ form.remember14 }}{{ form.remember14.label }}<br>
+                        {{ form.submit }}
+                    </form>
+                </th>
+                <th align="left">
+                    <input type = "checkbox" value = "all">ALL<br>
+                    <script type="text/javascript">
+                        {% for ma in mac %}
+                            document.write('<input type="checkbox" name="{{ ma|safe }}" value="{{ ma|safe }}"/>{{ ma|safe }}<br>');
+                        {% endfor %}
+                    </script>
+                    <input type="submit" value="查询">
+                </th>
+                <th align="left">
+                    <form enctype="multipart/form-data" method="post">
+                        {{ form.file }}
+                        {{ form.submit }}
+                    </form>
+                </th>
+            </tr>
+        </table>
+   </body>
+</html>
